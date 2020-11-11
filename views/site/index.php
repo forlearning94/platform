@@ -11,7 +11,7 @@
             <div class="icon">
               <img src="<?=Yii::getAlias('@web') . '/dist/img/info3.png'?>" alt="logo" style="width: 90px;">
             </div>
-            <a href="#" class="small-box-footer">To'liq ma'lumot... <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">To'liq ma'lumot. <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
