@@ -61,9 +61,11 @@ AdminAsset::register($this);
               <!-- User image -->
               <li class="user-header">
                 <img src="<?=Yii::getAlias('@web') . '/dist/img/adminAvatar.png'?>" class="img-circle" alt="User Image">
-
                 <p>
-                  <?= Yii::$app->user->isGuest ? 'Guest' : Yii::$app->user->identity->username; ?> - admin role
+                  <?= Yii::$app->user->isGuest ? '' : Yii::$app->user->identity->firstname . " " . Yii::$app->user->identity->lastname ?>
+                </p>
+                <p>
+                  <?= Yii::$app->user->isGuest ? 'Guest' : Yii::$app->user->identity->login . ' role' ?>
                 </p>
               </li>
               <!-- Menu Footer-->
