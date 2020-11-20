@@ -5,7 +5,6 @@
           <div class="small-box bg-yellow">
             <div class="inner" style="min-height: 120px;">
               <h3>44</h3>
-
               <p>User Registrations</p>
             </div>
             <div class="icon">

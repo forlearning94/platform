@@ -51,39 +51,47 @@ AdminAsset::register($this);
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?=Yii::getAlias('@web') . '/dist/img/adminAvatar.png'?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Administrator</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="<?=Yii::getAlias('@web') . '/dist/img/adminAvatar.png'?>" class="img-circle" alt="User Image">
-                <p>
-                  <?= Yii::$app->user->isGuest ? '' : Yii::$app->user->identity->firstname . " " . Yii::$app->user->identity->lastname ?>
-                </p>
-                <p>
-                  <?= Yii::$app->user->isGuest ? 'Guest' : Yii::$app->user->identity->login . ' role' ?>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Shaxsiy kabinet</a>
-                </div>
-                <div class="pull-right">
-                  <?= Html::beginForm(['/site/logout'], 'post')
-                  . Html::submitButton(
-                      'Tizimdan chiqish',
-                      ['class' => 'btn btn-default btn-flat']
-                  )
-                  . Html::endForm() ?>
-                </div>
-              </li>
-            </ul>
-          </li>
+          <?php 
+            if(Yii::$app->user->isGuest){
+                echo "<li>kirish</li>";
+            }else{
+          ?>
+
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="<?=Yii::getAlias('@web') . '/dist/img/adminAvatar.png'?>" class="user-image" alt="User Image">
+                <span class="hidden-xs">Administrator</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="<?=Yii::getAlias('@web') . '/dist/img/adminAvatar.png'?>" class="img-circle" alt="User Image">
+                  <p>
+                    <?= Yii::$app->user->identity->firstname . " " . Yii::$app->user->identity->lastname ?>
+                  </p>
+                  <p>
+                    <?= Yii::$app->user->identity->login . ' role' ?>
+                  </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Shaxsiy kabinet</a>
+                  </div>
+                  <div class="pull-right">
+                    <?= Html::beginForm(['/site/logout'], 'post')
+                    . Html::submitButton(
+                        'Tizimdan chiqish',
+                        ['class' => 'btn btn-default btn-flat']
+                    )
+                    . Html::endForm() ?>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <?php
+              }
+            ?>
 
           <!-- Control Sidebar Toggle Button 
             <li class="user user-menu">
