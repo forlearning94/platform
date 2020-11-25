@@ -53,11 +53,14 @@ AdminAsset::register($this);
         <ul class="nav navbar-nav">
           <?php 
             if(Yii::$app->user->isGuest){ ?>
-                
-                <a href="<?= Url::toRoute(['site/login']) ?>" class="logo"><i class="fa fa-sign-in"> Kirish</i>
-                </a>
-           <?php }else{
-          ?>
+                <li >
+                  <a href="<?= Url::toRoute(['site/login']) ?>">
+                    <i class="fa fa-sign-in"> KIRISH</i>
+                  </a>
+                </li>
+            <?php 
+            }else{
+            ?>
 
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
