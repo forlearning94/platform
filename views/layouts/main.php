@@ -52,9 +52,11 @@ AdminAsset::register($this);
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <?php 
-            if(Yii::$app->user->isGuest){
-                echo "<li>kirish</li>";
-            }else{
+            if(Yii::$app->user->isGuest){ ?>
+                
+                <a href="<?= Url::toRoute(['site/login']) ?>" class="logo"><i class="fa fa-sign-in"> Kirish</i>
+                </a>
+           <?php }else{
           ?>
 
             <li class="dropdown user user-menu">
