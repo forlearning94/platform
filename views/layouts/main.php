@@ -216,24 +216,7 @@ AdminAsset::register($this);
     }
     ?>
    
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header clearfix">
-      <h1 class="pull-left">
-        O'quvchilar
-      </h1>
-      <div class="pull-right">
-        <a href="#" class="btn btn-primary"><i class="fa fa-plus-square"></i> Qo'shish</a>
-      </div>
-    </section>
-    <!-- Main content -->
-    <section class="content">    
-        <?= $content ?>
-    </section>
-    <!-- /.content -->
-
-  </div>
+  <?= $content ?>
 </div>
 
 
